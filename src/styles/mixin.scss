@@ -1,0 +1,11 @@
+$clr-yellow: #FFE600;
+$clr-black: #333333;
+$clr-grey: #666666;
+$clr-lightgrey: #999999;
+$clr-white: #EEEEEE;
+$clr-blue: #3483FA;
+
+@mixin color-scheme($bg, $text) {
+    background-color: $bg;
+    color: $text;
+}

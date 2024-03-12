@@ -1,10 +1,10 @@
 import { lazy } from "react";
 import { paths } from "../paths";
 
-const ItemListContainer = lazy(
+const Results = lazy(
     () =>
       import(
-        /* webpackChunkName: "ItemListContainer" */ '../../pages/ItemListContainer'
+        /* webpackChunkName: "Results" */ '../../pages/Results'
       ),
 );
 
@@ -18,11 +18,11 @@ const ItemDetailContainer = lazy(
 export const routes = [
     {
         path: paths.home,
-        component: <ItemListContainer />
+        component: <Results />
     },
     {
         path: paths.items,
-        component: <ItemListContainer />
+        component: <Results />
     },
     {
         path: paths.items,

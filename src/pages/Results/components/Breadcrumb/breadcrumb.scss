@@ -1,0 +1,12 @@
+@import '@styles/mixin.scss';
+
+.itemlist__breadcrumb {
+    @include color-scheme($clr-white, $clr-lightgrey);
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    height: 1rem;
+    width: 80%;
+    font-size: 14px;
+}

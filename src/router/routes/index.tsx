@@ -8,10 +8,10 @@ const Results = lazy(
       ),
 );
 
-const ItemDetailContainer = lazy(
+const Details = lazy(
     () =>
       import(
-        /* webpackChunkName: "ItemDetailContainer" */ '../../pages/ItemDetailContainer'
+        /* webpackChunkName: "Details" */ '../../pages/Details'
       ),
 );
 
@@ -25,7 +25,7 @@ export const routes = [
         component: <Results />
     },
     {
-        path: paths.items,
-        component: <ItemDetailContainer />
+        path: paths.detail,
+        component: <Details />
     },
 ]

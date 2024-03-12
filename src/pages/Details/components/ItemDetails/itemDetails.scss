@@ -1,0 +1,66 @@
+@import '@styles/mixin.scss';
+
+.itemdetails__container {
+    @include color-scheme(#fff, $clr-black);
+    width: 80%;
+
+    .item__container {
+        display: flex;
+
+        .item__image {
+            padding: 1rem;
+            height: 470px;
+            width: 680px;
+            border-radius: 4px;
+        }
+
+        .item__description {
+            padding-top: 2rem;
+
+            p {
+                padding-bottom: 1rem;
+                font-size: 14px;
+                color: $clr-lightgrey;
+            }
+
+            h4 {
+                font-weight: 600;
+                font-size: 24px;
+            }
+
+            h3 {
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+                font-size: 46px;
+            }
+
+            .item__button {
+                @include color-scheme($clr-blue, $clr-white);
+                width: 90%;
+                height: 44px;
+                border-radius: 8px;
+
+                &:hover{
+                    background-color: #2968c8;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+
+    .item__disclaimer {
+        margin: 2rem;
+
+        h3 {
+            font-size: 28px;
+        }
+
+        p {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            font-size: 16px;
+            color: $clr-lightgrey;
+        }
+    }
+}

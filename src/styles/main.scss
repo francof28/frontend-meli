@@ -16,3 +16,8 @@
 body {
     @include color-scheme($clr-white, $clr-black);
 }
+
+button {
+    padding: 0;
+    border: none;
+}

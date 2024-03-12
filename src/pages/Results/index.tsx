@@ -1,5 +1,6 @@
 import './results.scss'
-import { Breadcrumb, Item } from "./components";
+import { Item } from "./components";
+import { Breadcrumb } from '@components/Breadcrumb';
 
 const Results = () => {
    return (

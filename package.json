@@ -2,9 +2,9 @@
   "name": "frontend-meli",
   "version": "1.0.0",
   "scripts": {
-    "start:client": "cd client && npm run dev",
-    "start:server": "cd server && npm start",
-    "build": "cd client && npm run build && cd ../server && npm run build"
+    "start": "concurrently \"npm start --prefix client\" \"npm start --prefix server\"",
+    "start:client": "cd client && npm run start",
+    "start:server": "cd server && npm start"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/francof28/frontend-meli/issues"
   },
-  "homepage": "https://github.com/francof28/frontend-meli#readme"
+  "homepage": "https://github.com/francof28/frontend-meli#readme",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
 }

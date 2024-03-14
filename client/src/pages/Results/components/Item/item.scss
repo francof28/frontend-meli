@@ -4,32 +4,50 @@
     @include color-scheme(#fff, $clr-black);
     display: flex;
     justify-content: space-between;
-    align-items: center;
     width: 80%;
     border-bottom: 1px solid $clr-white;
 
     .item__image {
-        padding: 1rem;
         height: 180px;
         width: 180px;
         border-radius: 4px;
+        padding: 1rem;
+
+        @media (max-width: $small-screen) {
+            height: auto;
+            width: auto;
+            max-width: 180px;
+        }
     }
 
     .item__description {
-        padding-top: 1.5rem;
-        height: 180px;
-        width: 60%;
+        display: flex;
+        flex-direction: column;
+        padding: 2rem 2rem 2rem 1rem;
+        width: 100%;
 
-        h3 {
-            font-size: 24px;
-            margin-bottom: 2rem;
-        }
         p {font-size: 18px;}
+
+        @media (max-width: $small-screen) {
+            p {font-size: 14px;}
+        }
+
+        .item__location {
+            h3 {
+                font-size: 24px;
+                margin-bottom: 2rem;
+            }
+
+            display: flex;
+            justify-content: space-between;
+            text-align: start;
+            p {font-size: 12px;}
+
+            @media (max-width: $small-screen) {
+                flex-direction: column;
+                p {margin-bottom: 12px;}
+            }
+        }
     }
 
-    .item__location {
-        width: 20%;
-        text-align: start;
-        font-size: 12px;
-    }
 }

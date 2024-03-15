@@ -1,4 +1,4 @@
-import { Price } from '../services/getItems'
+import { Price } from '@services/getItems'
 
 const currency: Record<string,string> = {
     'ARS': '$',

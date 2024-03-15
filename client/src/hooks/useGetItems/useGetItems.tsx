@@ -1,5 +1,6 @@
-import { getItems } from "../../services/getItems"
-import { useQuery } from "react-query"
+import { useQuery } from "react-query";
+
+import { getItems } from "@services/index";
 
 export const useGetItems = (searchParam: string | null) => {
     return useQuery({

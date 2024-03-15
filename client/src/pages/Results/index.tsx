@@ -1,8 +1,11 @@
-import './results.scss'
-import { ItemCard } from "./components";
-import { Breadcrumb } from '@components/Breadcrumb';
 import { useLocation } from 'react-router-dom';
-import { useGetItems } from '../../hooks/useGetItems';
+
+import { Breadcrumb } from '@components/Breadcrumb';
+import { ItemCard } from "./components";
+
+import { useGetItems } from '@hooks/index';
+
+import './results.scss'
 
 const Results = () => {
   const urlParams = new URLSearchParams(useLocation().search).get('search')

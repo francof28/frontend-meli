@@ -1,6 +1,7 @@
-import { formatPrice } from '../../../../utils';
-import { Item } from '../../../../services/getItemById'
-import './itemDetails.scss'
+import { Item } from '@services/getItemById';
+import { formatPrice } from '@utils/index';
+
+import './itemDetails.scss';
 
 type Props = {
     item: Item;

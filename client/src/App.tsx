@@ -1,8 +1,10 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import { Navbar } from "./components"
 import { Suspense } from "react"
-import { routes } from "./router/routes"
 import { QueryClient, QueryClientProvider } from "react-query"
+
+import { routes } from "./router/routes"
+
+import { Navbar } from "./components"
 
 const queryClient = new QueryClient();
 

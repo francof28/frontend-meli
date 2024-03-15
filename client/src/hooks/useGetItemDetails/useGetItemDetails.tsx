@@ -1,5 +1,6 @@
-import { getItemById } from "../../services/getItemById"
-import { useQuery } from "react-query"
+import { useQuery } from "react-query";
+
+import { getItemById } from "@services/index";
 
 export const useGetItemDetails = (id: string | undefined) => {
     return useQuery({

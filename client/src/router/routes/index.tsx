@@ -1,4 +1,5 @@
 import { lazy } from "react";
+
 import { paths } from "../paths";
 
 const Results = lazy(

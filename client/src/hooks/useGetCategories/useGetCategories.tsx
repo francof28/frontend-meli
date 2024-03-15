@@ -1,5 +1,6 @@
-import { getCategories } from "../../services/getCategories"
 import { useQuery } from "react-query"
+
+import { getCategories } from "@services/index"
 
 export const useGetCategories = (id: string | undefined) => {
     return useQuery({

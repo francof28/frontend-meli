@@ -1,9 +1,11 @@
 import { useParams } from 'react-router-dom';
-import { ItemDetails } from './components';
-import './details.scss'
+
 import { Breadcrumb } from '@components/Breadcrumb';
-import { useGetItemDetails } from '../../hooks/useGetItemDetails';
-import { useGetCategories } from '../../hooks/useGetCategories';
+import { ItemDetails } from './components';
+
+import { useGetCategories, useGetItemDetails } from '@hooks/index';
+
+import './details.scss'
 
 const Details = () => {
    const { id } = useParams();

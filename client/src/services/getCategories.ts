@@ -1,4 +1,5 @@
 import axios from "axios";
+
 import { API_CATEGORIES } from "./constants";
 
 interface GetCategoriesResponse {

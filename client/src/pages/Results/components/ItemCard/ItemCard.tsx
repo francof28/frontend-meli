@@ -1,7 +1,9 @@
-import { formatPrice } from '../../../../utils';
-import { Item } from '../../../../services/getItems';
-import './itemCard.scss'
 import { useNavigate } from 'react-router-dom';
+
+import { Item } from '@services/getItems';
+import { formatPrice } from '@utils/index';
+
+import './itemCard.scss'
 
 type Props = {
     item: Item

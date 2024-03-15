@@ -1,4 +1,4 @@
-import './breadcrumb.scss'
+import './breadcrumb.scss';
 
 type Props = {
     categories: string[] | undefined

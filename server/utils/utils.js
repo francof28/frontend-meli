@@ -56,12 +56,12 @@ function formatItemData(itemData, description) {
             price: {
                 currency: itemData.currency_id,
                 amount: itemData.price,
-                decimals: 0 // Puedes agregar lógica para calcular los decimales si es necesario
+                decimals: 0
             },
             picture: itemData.thumbnail,
             condition: itemData.condition,
             free_shipping: itemData.shipping.free_shipping,
-            sold_quantity: itemData.sold_quantity || 0, // Si no hay cantidad vendida, se establece como 0
+            sold_quantity: itemData.sold_quantity || 0,
             description: description
         }
     };

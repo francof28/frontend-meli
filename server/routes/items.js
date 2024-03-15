@@ -63,4 +63,25 @@ router.get('/api/items/:id', cors(), async (req, res) => {
     }
 });
 
+router.get('/api/categories/:id', cors(), async (req, res) => {
+    try {
+        const itemId = req.params.id;
+
+        const apiUrl = `https://api.mercadolibre.com/categories/${itemId}`;
+
+        const response = await axios.get(apiUrl);
+
+        const formattedCategory = {
+            id: response.data.id,
+            name: response.data.name,
+            children_categories: response.data.children_categories
+        };
+
+        res.json(formattedCategory);
+    } catch (error) {
+        console.error('Error:', error.message);
+        res.status(500).json({ error: 'Ocurrió un error al obtener la categoría' });
+    }
+});
+
 module.exports = router;

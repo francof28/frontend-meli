@@ -35,7 +35,9 @@ router.get('/api/items', cors() ,async (req, res) => {
 
       const topCategories = sortedCategories.slice(0, 4);
 
-      res.json(utils.formatItems(items, topCategories));
+      const categorieNamesArray = await utils.searchCategories(topCategories)
+
+      res.json(utils.formatItems(items, categorieNamesArray));
     } catch (error) {
 
       console.error('Error:', error.message);

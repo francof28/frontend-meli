@@ -67,9 +67,26 @@ function formatItemData(itemData, description) {
     };
 }
 
+async function searchCategories(categoriesArray) {
+    try {
+        const categoryPromises = categoriesArray.map(async (category) => {
+            const categoryUrl = `https://api.mercadolibre.com/categories/${category}`;
+            const categoryResponse = await axios.get(categoryUrl);
+            return categoryResponse.data.name;
+        });
+
+        const categoryNames = await Promise.all(categoryPromises);
+        return categoryNames;
+    } catch (error) {
+        console.error('Error al obtener las categorías:', error.message);
+        throw new Error('Ocurrió un error al obtener las categorías');
+    }
+}
+
 module.exports = {
     formatItems,
     getItemData,
     getItemDescription,
-    formatItemData
+    formatItemData,
+    searchCategories
 };

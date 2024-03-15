@@ -17,7 +17,7 @@ export const ItemDetails: React.FC<Props> = ({ item }) => {
 
     return (
         <section className="itemdetails__container">
-            <div className='item__container'>
+            <div className='itemdata__container'>
                 <img className='item__image' src={picture} alt={title}/>
                 <div className='item__description'>
                     <p>{conditions[condition]} - {sold_quantity} vendidos</p>

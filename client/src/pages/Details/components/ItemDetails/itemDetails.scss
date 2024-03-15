@@ -4,7 +4,7 @@
     @include color-scheme(#fff, $clr-black);
     width: $container-width;
 
-    .item__container {
+    .itemdata__container {
         display: flex;
 
         @media (max-width: $large-screen) {

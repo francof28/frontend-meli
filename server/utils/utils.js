@@ -1,12 +1,12 @@
 const axios = require('axios');
 
-function formatItems(items) {
+function formatItems(items, categories) {
     const formattedItems = {
         author: {
             name: 'Franco',
             lastname: 'Fatala'
         },
-        categories: items.map(item => item.category_id),
+        categories: categories,
         items: items.map(item => ({
             id: item.id,
             title: item.title,

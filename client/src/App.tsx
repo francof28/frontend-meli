@@ -4,6 +4,7 @@ import { Suspense } from "react"
 import { routes } from "./router/routes"
 
 function App() {
+
   return (
   <>
     <BrowserRouter>

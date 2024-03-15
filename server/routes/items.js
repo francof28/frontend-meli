@@ -1,11 +1,12 @@
 const expresss = require('express');
 
+const cors = require('cors');
 const axios = require('axios');
 const utils = require('../utils/utils')
 
 const router = expresss.Router();
 
-router.get('/api/items', async (req, res) => {
+router.get('/api/items', cors() ,async (req, res) => {
     try {
       const query = req.query.q;
 
@@ -13,10 +14,28 @@ router.get('/api/items', async (req, res) => {
 
       const response = await axios.get(apiUrl);
 
-      // We only want the first four items
-      const firstFourItems = utils.formatItems(response.data.results.slice(0, 4));
+      const data = response.data;
 
-      res.json(firstFourItems);
+      // We only want the first four items
+      const items = data.results.slice(0, 4);
+
+      // Filter categories with most results
+      const categoryCounts = {};
+      items.forEach(item => {
+          const categoryId = item.category_id;
+          if (categoryCounts[categoryId]) {
+              categoryCounts[categoryId]++;
+          } else {
+              categoryCounts[categoryId] = 1;
+          }
+      });
+
+      const sortedCategories = Object.keys(categoryCounts)
+            .sort((a, b) => categoryCounts[b] - categoryCounts[a]);
+
+      const topCategories = sortedCategories.slice(0, 4);
+
+      res.json(utils.formatItems(items, topCategories));
     } catch (error) {
 
       console.error('Error:', error.message);
@@ -25,7 +44,7 @@ router.get('/api/items', async (req, res) => {
 });
 
 
-router.get('/api/items/:id', async (req, res) => {
+router.get('/api/items/:id', cors(), async (req, res) => {
     try {
         const itemId = req.params.id;
 

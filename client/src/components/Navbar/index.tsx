@@ -10,7 +10,7 @@ export const Navbar = () => {
                     width={50}
                     height={32}
                 />
-                <form className='container__input'>
+                <form className='container__input' action='/buscar' method='get'>
                     <input className='input__search' type='text'
                         placeholder='Nunca dejes de buscar'
                         aria-label='Buscar en MercadoLibre'

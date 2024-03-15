@@ -16,7 +16,7 @@ export const ItemDetails: React.FC<Props> = ({ item }) => {
     const {title, price, picture, sold_quantity, description, condition} = item;
 
     return (
-        <main className="itemdetails__container">
+        <section className="itemdetails__container">
             <div className='item__container'>
                 <img className='item__image' src={picture} alt={title}/>
                 <div className='item__description'>
@@ -32,6 +32,6 @@ export const ItemDetails: React.FC<Props> = ({ item }) => {
                 {description && <h3>Descripción del producto</h3>}
                 <p>{description}</p>
             </div>
-        </main>
+        </section>
     )
 }

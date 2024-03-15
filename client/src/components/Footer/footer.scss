@@ -1,0 +1,10 @@
+@import '@styles/mixin.scss';
+
+.footer {
+    @include color-scheme($clr-white, $clr-black);
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

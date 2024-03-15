@@ -2,9 +2,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { Suspense } from "react"
 import { QueryClient, QueryClientProvider } from "react-query"
 
-import { routes } from "./router/routes"
+import { routes } from "./router/routes";
 
-import { Navbar } from "./components"
+import { Layout } from "@components/Layout";
 
 const queryClient = new QueryClient();
 
@@ -12,15 +12,16 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <Navbar />
         {/* TODO: Create fallback Loader component */}
-        <Suspense fallback={<div>Loading...</div>}>
-          <Routes>
-            {routes.map((route) =>
-              <Route key={route.path} path={route.path} element={route.component} />
-            )}
-          </Routes>
-        </Suspense>
+        <Layout>
+          <Suspense fallback={<div>Loading...</div>}>
+            <Routes>
+              {routes.map((route) =>
+                <Route key={route.path} path={route.path} element={route.component} />
+              )}
+            </Routes>
+          </Suspense>
+        </Layout>
       </BrowserRouter>
     </QueryClientProvider>
   )

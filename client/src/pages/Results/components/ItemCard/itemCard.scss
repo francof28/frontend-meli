@@ -67,8 +67,12 @@
             }
         }
 
-        .item__title:hover{
-            cursor: pointer;
+        .item__title{
+            font-weight: 200;
+
+            &:hover{
+                cursor: pointer;
+            }
         }
     }
 

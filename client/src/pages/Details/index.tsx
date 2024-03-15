@@ -25,10 +25,10 @@ const Details = () => {
    }
 
    return (
-     <main className='details__container'>
+     <section className='details__container'>
        {category && <Breadcrumb categories={categories}/>}
        {item && <ItemDetails item={item}/>}
-     </main>
+     </section>
     )
 };
 

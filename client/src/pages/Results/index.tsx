@@ -22,10 +22,11 @@ const Results = () => {
   const items = data?.items
 
   return (
-  <main className='itemlist__container'>
-    <Breadcrumb categories={categories}/>
-    {items?.map((item) => <ItemCard key={item.id} item={item} />)}
-  </main>)
+    <section className='itemlist__container'>
+      <Breadcrumb categories={categories}/>
+      {items?.map((item) => <ItemCard key={item.id} item={item} />)}
+    </section>
+  )
 };
 
 export default Results;

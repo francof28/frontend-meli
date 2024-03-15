@@ -9,6 +9,7 @@ interface Price {
 
 export interface Item {
     id: string;
+    category_id: string,
     title: string;
     price: Price;
     picture: string;

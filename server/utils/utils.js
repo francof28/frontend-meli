@@ -52,6 +52,7 @@ function formatItemData(itemData, description) {
         },
         item: {
             id: itemData.id,
+            category_id: itemData.category_id,
             title: itemData.title,
             price: {
                 currency: itemData.currency_id,

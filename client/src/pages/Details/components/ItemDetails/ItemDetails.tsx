@@ -12,7 +12,7 @@ const conditions: Record<string,string> = {
 }
 
 export const ItemDetails: React.FC<Props> = ({ item }) => {
-    const {id, title, price, picture, sold_quantity, description, condition} = item;
+    const {title, price, picture, sold_quantity, description, condition} = item;
 
     return (
         <main className="itemdetails__container">
@@ -28,7 +28,7 @@ export const ItemDetails: React.FC<Props> = ({ item }) => {
                 </div>
             </div>
             <div  className='item__disclaimer'>
-                <h3>Descripción del producto</h3>
+                {description && <h3>Descripción del producto</h3>}
                 <p>{description}</p>
             </div>
         </main>

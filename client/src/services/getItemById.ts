@@ -7,7 +7,7 @@ interface Price {
     decimals: number;
 }
 
-interface Item {
+export interface Item {
     id: string;
     title: string;
     price: Price;
@@ -29,7 +29,7 @@ interface GetItemsByIdResponse {
 }
 
 type GetItemsById = (
-    itemId: string
+    itemId: string | undefined
 ) => Promise<GetItemsByIdResponse>;
 
 export const getItemById: GetItemsById = async (itemId): Promise<GetItemsByIdResponse>  => {

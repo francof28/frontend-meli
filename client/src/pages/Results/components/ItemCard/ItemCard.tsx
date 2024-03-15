@@ -1,17 +1,24 @@
 import { formatPrice } from '../../../../utils';
 import { Item } from '../../../../services/getItems';
 import './itemCard.scss'
+import { useNavigate } from 'react-router-dom';
 
 type Props = {
     item: Item
 }
 
 export const ItemCard: React.FC<Props> = ({ item }) => {
-    const {title, price, picture, free_shipping} = item
+    const navigate = useNavigate()
+
+    const {id, title, price, picture, free_shipping} = item
+
+    const onClick = () => {
+        return navigate(`/items/${id}`)
+    }
 
     return (
         <div className="item__container">
-            <img className='item__image' src={picture} alt={title}/>
+            <img className='item__image' src={picture} alt={title} onClick={onClick}/>
             <div className='item__description'>
                 <div className='item__location'>
                     <div className='item__price'>
@@ -19,7 +26,7 @@ export const ItemCard: React.FC<Props> = ({ item }) => {
                         {free_shipping && <img src='/assets/ic_shipping.png' alt='Icono de Envío gratis' width={20} height={20}/>}
                     </div>
                 </div>
-                <p>{title}</p>
+                <p className='item__title' onClick={onClick}>{title}</p>
             </div>
         </div>
     )

@@ -6,5 +6,5 @@ const currency: Record<string,string> = {
 }
 
 export const formatPrice = (price: Price) => {
-    return `${currency[price.currency] + ' ' + price.amount.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}`
+    return `${currency[price.currency] + price.amount.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}`
 }

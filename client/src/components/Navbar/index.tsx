@@ -1,6 +1,19 @@
+import { ChangeEvent, useState } from 'react';
 import './navbar.scss'
+import { useNavigate } from 'react-router-dom';
 
 export const Navbar = () => {
+    const navigate = useNavigate()
+    const [searchValue, setSearchValue] = useState('')
+
+    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+        setSearchValue(event.target.value);
+    }
+
+    const handleSubmit = (e: any) => {
+        e.preventDefault()
+        if (searchValue) return navigate(`/items?search=${searchValue}`)
+    }
 
     return (
         <header className='navbar'>
@@ -10,10 +23,12 @@ export const Navbar = () => {
                     width={50}
                     height={32}
                 />
-                <form className='container__input' action='/buscar' method='get'>
+                <form className='container__input' onSubmit={handleSubmit}>
                     <input className='input__search' type='text'
+                        value={searchValue}
                         placeholder='Nunca dejes de buscar'
                         aria-label='Buscar en MercadoLibre'
+                        onChange={handleChange}
                     />
                     <button className='button__search' type='submit' title='Buscar'>
                         <img src='/assets/ic_Search2x.png' alt='Input logo lupa de búsqueda'

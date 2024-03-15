@@ -1,11 +1,11 @@
 const expresss = require('express')
 
+const itemsRouter = require('./routes/items')
+
 const app = expresss();
 
-app.get('/', (req, res) => {
-    res.send('server online')
-})
+app.use('/', itemsRouter)
 
-app.listen(3001, () => {
-    console.log('server online: port 3001')
+app.listen(3000, () => {
+    console.log('server online: port 3000')
 })

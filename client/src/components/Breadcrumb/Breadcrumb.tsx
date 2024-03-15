@@ -7,7 +7,9 @@ type Props = {
 export const Breadcrumb: React.FC<Props> = ({categories}) => {
     return (
         <div className='itemlist__breadcrumb'>
-            Electrónica audio y video  &gt;  iPod  &gt;  Reproductores  &gt;  iPod Touch  &gt;  32gb
+            {categories?.map((category, index) => {
+                return <p key={category}>&nbsp;{category}&nbsp;{(index !== categories.length - 1) && <span>&gt;</span>}    </p>
+            })}
         </div>
     )
 }

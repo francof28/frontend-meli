@@ -1,7 +1,7 @@
 import axios from "axios";
 import { API_ITEMS } from "./constants";
 
-interface Price {
+export interface Price {
     currency: string;
     amount: number;
     decimals: number;

@@ -14,7 +14,6 @@ const Results = () => {
   if (emptyPage) {
     return (<></>)
   }
-  console.log('data: ', data)
 
   const categories = data?.categories
   const items = data?.items

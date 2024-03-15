@@ -33,9 +33,23 @@
         }
 
         .item__location {
-            h3 {
-                font-size: 24px;
+
+            .item__price {
+                display: flex;
+                align-items: center;
                 margin-bottom: 2rem;
+
+                h3 {
+                    font-size: 24px;
+                }
+
+                img {
+                    margin-left: 0.5rem;
+                }
+
+                @media (max-width: $small-screen) {
+                    img { display: none;}
+                }
             }
 
             display: flex;

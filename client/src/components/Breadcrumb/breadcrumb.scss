@@ -9,4 +9,8 @@
     height: 1rem;
     width: $container-width;
     font-size: 14px;
+
+    .goback_breadcrumb {
+        cursor: pointer;
+    }
 }

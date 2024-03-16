@@ -3,4 +3,4 @@ export const paths = {
     items: '/items',
     detail: '/items/:id',
     notFound: '/*'
-}
+} as const;

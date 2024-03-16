@@ -1,4 +1,4 @@
-import { lazy } from "react";
+import { LazyExoticComponent, lazy } from "react";
 
 import { paths } from "../paths";
 
@@ -23,21 +23,26 @@ const NotFound = lazy(
     ),
 );
 
-export const routes = [
+type Route = {
+  path: string;
+  component: LazyExoticComponent<() => JSX.Element>
+}
+
+export const routes: Route[] = [
     {
         path: paths.home,
-        component: <Results />
+        component: Results
     },
     {
         path: paths.items,
-        component: <Results />
+        component: Results
     },
     {
         path: paths.detail,
-        component: <Details />
+        component: Details
     },
     {
         path: paths.notFound,
-        component: <NotFound />
+        component: NotFound
     },
 ]

@@ -20,7 +20,7 @@ export const ItemCard: React.FC<Props> = ({ item }) => {
 
     return (
         <div className="item__container">
-            <img className='item__image' src={picture} alt={title} onClick={onClick}/>
+            <img className='item__image' src={picture} alt={title} onClick={onClick} aria-label={`Ver detalles de ${title}`} />
             <div className='item__description'>
                 <div className='item__location'>
                     <div className='item__price'>
@@ -28,7 +28,9 @@ export const ItemCard: React.FC<Props> = ({ item }) => {
                         {free_shipping && <img src='/assets/ic_shipping.png' alt='Icono de Envío gratis' width={20} height={20}/>}
                     </div>
                 </div>
-                <p className='item__title' onClick={onClick}>{title}</p>
+                <p className='item__title' onClick={onClick} aria-label={`Ver detalles de ${title}`}>
+                    {title}
+                </p>
             </div>
         </div>
     )

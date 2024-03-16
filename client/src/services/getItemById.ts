@@ -1,6 +1,5 @@
-import axios from "axios";
-
 import { API_ITEM_BY_ID } from "./constants";
+import { publicAxiosInstance } from "./axios";
 
 interface Price {
     currency: string;
@@ -37,7 +36,5 @@ type GetItemsById = (
 export const getItemById: GetItemsById = async (itemId): Promise<GetItemsByIdResponse>  => {
     const url = API_ITEM_BY_ID.concat(`${itemId}`)
 
-    const response = await axios.get(url);
-
-    return response.data
+    return await publicAxiosInstance.get(url);
 }

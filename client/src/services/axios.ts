@@ -11,5 +11,5 @@ export const publicAxiosInstance = axios.create({
 
 publicAxiosInstance.interceptors.response.use(
     (response) => response.data,
-    (error) => error.data
+    (error) => {return Promise.reject(error.data)}
 )

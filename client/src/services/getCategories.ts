@@ -1,6 +1,5 @@
-import axios from "axios";
-
 import { API_CATEGORIES } from "./constants";
+import { publicAxiosInstance } from "./axios";
 
 interface GetCategoriesResponse {
     id: string;
@@ -15,7 +14,5 @@ type getCategories = (
 export const getCategories: getCategories = async (category): Promise<GetCategoriesResponse> => {
     const url = API_CATEGORIES.concat(`${category}`)
 
-    const response = await axios.get(url);
-
-    return response.data;
+    return await publicAxiosInstance.get(url);
 }

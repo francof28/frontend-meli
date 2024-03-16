@@ -1,0 +1,11 @@
+@import '@styles/mixin.scss';
+
+.itemlist__container {
+    @include color-scheme($clr-white, $clr-black);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 90vh;
+    width: 100%;
+}

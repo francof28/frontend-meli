@@ -1,0 +1,79 @@
+@import '@styles/mixin.scss';
+
+.item__container {
+    @include color-scheme(#fff, $clr-black);
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    border-bottom: 1px solid $clr-white;
+
+    .item__image {
+        height: 180px;
+        width: 180px;
+        border-radius: 4px;
+        padding: 1rem;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        @media (max-width: $small-screen) {
+            height: auto;
+            width: auto;
+            max-width: 180px;
+        }
+    }
+
+    .item__description {
+        display: flex;
+        flex-direction: column;
+        padding: 2rem 2rem 2rem 1rem;
+        width: 100%;
+
+        p {font-size: 18px;}
+
+        @media (max-width: $small-screen) {
+            p {font-size: 14px;}
+        }
+
+        .item__location {
+
+            .item__price {
+                display: flex;
+                align-items: center;
+                margin-bottom: 2rem;
+
+                h3 {
+                    font-size: 24px;
+                }
+
+                img {
+                    margin-left: 0.5rem;
+                }
+
+                @media (max-width: $small-screen) {
+                    img { display: none;}
+                }
+            }
+
+            display: flex;
+            justify-content: space-between;
+            text-align: start;
+            p {font-size: 12px;}
+
+            @media (max-width: $small-screen) {
+                flex-direction: column;
+                p {margin-bottom: 12px;}
+            }
+        }
+
+        .item__title{
+            font-weight: 200;
+
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+
+}

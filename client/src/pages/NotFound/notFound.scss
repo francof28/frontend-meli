@@ -1,0 +1,15 @@
+@import '@styles/mixin.scss';
+
+.notfound__container {
+    @include color-scheme($clr-white, $clr-black);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    width: 100%;
+
+    h1 {
+        margin: 3rem;
+    }
+}

@@ -1,0 +1,19 @@
+$clr-yellow: #FFE600;
+$clr-black: #333333;
+$clr-grey: #666666;
+$clr-lightgrey: #999999;
+$clr-white: #EEEEEE;
+$clr-blue: #3483FA;
+
+$container-width: 80%;
+
+$small-screen: 420px;
+$medium-screen: 768px;
+$large-screen: 1024px;
+
+// TODO: font-sizes variables review (desktop & mobile)
+
+@mixin color-scheme($bg, $text) {
+    background-color: $bg;
+    color: $text;
+}

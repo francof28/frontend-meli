@@ -1,0 +1,95 @@
+@import '@styles/mixin.scss';
+
+.itemdetails__container {
+    @include color-scheme(#fff, $clr-black);
+    width: $container-width;
+
+    .itemdata__container {
+        display: flex;
+
+        @media (max-width: $large-screen) {
+            padding: 1rem;
+            flex-direction: column;
+        }
+
+        .item__image {
+            padding: 1rem;
+            height: 80%;
+            width: 65%;
+            border-radius: 4px;
+
+            @media (max-width: $large-screen) {
+                padding: 0rem;
+                width: 100%;
+            }
+        }
+
+        .item__description {
+            width: 35%;
+            padding-top: 2rem;
+
+            p {
+                padding-bottom: 1rem;
+                font-size: 14px;
+                color: $clr-lightgrey;
+            }
+
+            h4 {
+                font-weight: 600;
+                font-size: 24px;
+            }
+
+            h3 {
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+                font-size: 46px;
+            }
+
+
+            @media (max-width: $large-screen) {
+                width: 100%;
+
+                p {font-size: 12px}
+                h4 {font-size: 18px}
+                h3 {font-size: 36px}
+            }
+
+            .item__button {
+                @include color-scheme($clr-blue, $clr-white);
+                width: 85%;
+                height: 44px;
+                border-radius: 8px;
+
+                &:hover{
+                    background-color: #2968c8;
+                    cursor: pointer;
+                }
+
+                @media (max-width: $large-screen) {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+
+    .item__disclaimer {
+        margin: 2rem;
+
+        h3 {
+            font-size: 28px;
+        }
+
+        p {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            font-size: 16px;
+            color: $clr-lightgrey;
+        }
+
+        @media (max-width: $large-screen) {
+            h3 {font-size: 20px;}
+            p {font-size: 14px;}
+        }
+    }
+}

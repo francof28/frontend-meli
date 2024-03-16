@@ -1,27 +1,30 @@
 import { useParams } from 'react-router-dom';
 
-import { Breadcrumb } from '@components/Breadcrumb';
+import { Breadcrumb, Loader, ErrorPage } from '@components/index';
+
 import { ItemDetails } from './components';
 
 import { useGetCategories, useGetItemDetails } from '@hooks/index';
 
-import './details.scss'
+import './details.scss';
 
 const Details = () => {
    const { id } = useParams();
 
    const { data, isLoading, isError } = useGetItemDetails(id)
 
-   const emptyPage = !id || (!isLoading && !data) || isError
-
    const item = data?.item
 
-   const { data: category } = useGetCategories(item?.category_id)
+   const { data: category, isLoading: isLoadingCategory, isError: isErrorCategory } = useGetCategories(item?.category_id)
 
    const categories = [category?.name, ...(category?.children_categories.map((child: any) => child.name) || [])].slice(0, 4);
 
-   if (emptyPage) {
-      return (<></>)
+   if (isLoading || isLoadingCategory) {
+    return <Loader />
+   }
+
+   if (isError || isErrorCategory) {
+    return <ErrorPage />
    }
 
    return (

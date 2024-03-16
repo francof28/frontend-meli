@@ -1,22 +1,25 @@
 import { useLocation } from 'react-router-dom';
 
-import { Breadcrumb } from '@components/Breadcrumb';
+import { Breadcrumb, Loader, ErrorPage } from '@components/index';
+
 import { ItemCard } from "./components";
 
 import { useGetItems } from '@hooks/index';
 
-import './results.scss'
+import './results.scss';
 
 const Results = () => {
   const urlParams = new URLSearchParams(useLocation().search).get('search')
 
-  const { data, isLoading, isError } = useGetItems(urlParams)
+  const { data, isLoading, isError} = useGetItems(urlParams)
 
-  const emptyPage = !urlParams || (!isLoading && !data) || isError
-
-  if (emptyPage) {
-    return (<></>)
+  if (isLoading) {
+    return (<Loader />)
   }
+
+  if (isError) {
+    return <ErrorPage />
+   }
 
   const categories = data?.categories
   const items = data?.items

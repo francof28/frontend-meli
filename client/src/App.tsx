@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "react-query"
 import { routes } from "./router/routes";
 
 import { Layout } from "@components/Layout";
+import { Loader } from "./components";
 
 const queryClient = new QueryClient();
 
@@ -12,9 +13,8 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        {/* TODO: Create fallback Loader component */}
         <Layout>
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<Loader />}>
             <Routes>
               {routes.map((route) =>
                 <Route key={route.path} path={route.path} element={route.component} />

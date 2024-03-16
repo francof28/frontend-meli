@@ -6,6 +6,7 @@ export const useGetItems = (searchParam: string | null) => {
     return useQuery({
         queryKey: ['items', searchParam],
         queryFn: () => getItems(searchParam),
-        enabled: searchParam !== null && searchParam !== ''
+        enabled: searchParam !== null && searchParam !== '',
+        retry: false
     })
 }

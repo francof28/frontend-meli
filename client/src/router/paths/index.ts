@@ -1,5 +1,6 @@
 export const paths = {
     home: '/',
     items: '/items',
-    detail: '/items/:id'
+    detail: '/items/:id',
+    notFound: '/*'
 }

@@ -1,0 +1,24 @@
+@import '@styles/mixin.scss';
+
+.loader__container {
+    @include color-scheme($clr-white, $clr-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+
+    .loader {
+        border: 8px solid $clr-blue;
+        border-top: 8px solid $clr-black;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+
+        animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+        0%{transform: rotate(0deg);}
+        100%{transform: rotate(360deg);}
+    }
+}

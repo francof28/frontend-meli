@@ -16,6 +16,13 @@ const Details = lazy(
       ),
 );
 
+const NotFound = lazy(
+  () =>
+    import(
+      /* webpackChunkName: "NotFound" */ '../../pages/NotFound'
+    ),
+);
+
 export const routes = [
     {
         path: paths.home,
@@ -28,5 +35,9 @@ export const routes = [
     {
         path: paths.detail,
         component: <Details />
+    },
+    {
+        path: paths.notFound,
+        component: <NotFound />
     },
 ]
